@@ -1,0 +1,20 @@
+{
+  "name": "@forzoom/jssdk",
+  "version": "0.0.3",
+  "description": "",
+  "main": "dist/jssdk.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config ./build/webpack.config.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Forzoom/jssdk.git"
+  },
+  "author": "Forzoom",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Forzoom/jssdk/issues"
+  },
+  "homepage": "https://github.com/Forzoom/jssdk#readme"
+}
