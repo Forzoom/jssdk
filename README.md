@@ -14,10 +14,10 @@ jssdk.config({
 
 ### Version
 
-#### 0.0.1(deprecated)
-
-1. 添加基础功能
-
 #### 0.0.3
 
 1. 修复错误
+
+#### 0.1.0
+
+1. 使用rollup构建，发布cjs和esm两个版本内容
