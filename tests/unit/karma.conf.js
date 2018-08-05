@@ -1,13 +1,13 @@
 module.exports = function (config) {
     config.set({
         browsers: [
-            // 'PhantomJS',
+            'PhantomJS',
             'Chrome',
         ],
         frameworks: [
             'jasmine',
             'sinon-chai',
-            // 'phantomjs-shim',
+            'phantomjs-shim',
         ],
         reporters: [
             'spec',
