@@ -13,4 +13,12 @@ module.exports = exports = [
             format: 'cjs',
         },
     },
+    {
+        input: './src/index.js',
+        output: {
+            file: './dist/jssdk.js',
+            format: 'umd',
+            name: 'jssdk',
+        },
+    },
 ];

@@ -1,3 +1,9 @@
+(function (global, factory) {
+	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+	typeof define === 'function' && define.amd ? define(factory) :
+	(global.jssdk = factory());
+}(this, (function () { 'use strict';
+
 var jssdkModule = {
     state: {
         // 当前是否已经缓存了jssdkParams
@@ -218,4 +224,6 @@ function error(cb) {
     _options.store.commit('addJSSDKErrorCallback', cb);
 }
 
-export default jssdk;
+return jssdk;
+
+})));

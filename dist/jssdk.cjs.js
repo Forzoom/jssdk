@@ -1,7 +1,5 @@
 'use strict';
 
-Object.defineProperty(exports, '__esModule', { value: true });
-
 var jssdkModule = {
     state: {
         // 当前是否已经缓存了jssdkParams
@@ -108,15 +106,13 @@ var jssdkModule = {
 };
 
 var jssdk = {
-    install,
-    config,
-    error,
-    ready,
+    install: install,
+    config: config,
+    error: error,
+    ready: ready,
 };
 // 默认的options
 var _options = null;
-// Vue对象
-exports._Vue = null;
 
 /**
  * 钩子函数
@@ -126,9 +122,13 @@ function config(param) {
         console.log('[jssdk][fail] invoke Vue.use(jssdk, options) first');
         return;
     }
+    if (!_options || !_options.store) {
+        console.log('[jssdk][fail] lost options.store');
+        return;
+    }
     var store = _options.store;
     var commit = store.commit;
-    if (!wx) {
+    if (typeof wx === 'undefined') {
         var callbacks = store.state.jssdk.jssdkErrorCallbacks;
         commit('setJSSDKError', true);
         commit('setJSSDKErrorRes', {
@@ -138,6 +138,7 @@ function config(param) {
             cb && cb(res);
         });
         commit('cleanJSSDKErrorCallbacks');
+        return;
     }
     // 配置正确存在
     if (store.state.jssdk.jssdkConfig) {
@@ -195,8 +196,6 @@ function install(Vue, options) {
         console.log('[jssdk][fail] options.store.state.jssdk already exist');
         return;
     }
-
-    exports._Vue = Vue;
     _options = options;
 
     // 注册module
@@ -221,4 +220,4 @@ function error(cb) {
     _options.store.commit('addJSSDKErrorCallback', cb);
 }
 
-exports.default = jssdk;
+module.exports = jssdk;

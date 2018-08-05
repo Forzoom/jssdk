@@ -1,11 +1,11 @@
 {
   "name": "@forzoom/jssdk",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "main": "dist/jssdk.cjs.js",
   "module": "dist/jssdk.esm.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "karma start ./tests/unit/karma.conf.js",
     "build": "node build/build.js"
   },
   "repository": {
@@ -19,6 +19,20 @@
   },
   "homepage": "https://github.com/Forzoom/jssdk#readme",
   "devDependencies": {
-    "rollup": "^0.56.5"
+    "babel-polyfill": "^6.26.0",
+    "chai": "^4.1.2",
+    "jasmine": "^3.1.0",
+    "karma": "^2.0.5",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^1.1.2",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-phantomjs-shim": "^1.5.0",
+    "karma-sinon": "^1.0.5",
+    "karma-sinon-chai": "^2.0.2",
+    "karma-spec-reporter": "0.0.32",
+    "phantomjs-prebuilt": "^2.1.7",
+    "rollup": "^0.56.5",
+    "sinon": "^6.1.4",
+    "sinon-chai": "^3.2.0"
   }
 }

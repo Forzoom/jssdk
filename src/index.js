@@ -1,15 +1,15 @@
 import jssdkModule from './jssdk-module.js';
 
 var jssdk = {
-    install,
-    config,
-    error,
-    ready,
+    install: install,
+    config: config,
+    error: error,
+    ready: ready,
 };
 // 默认的options
 var _options = null;
 // Vue对象
-export var _Vue = null;
+var _Vue = null;
 
 /**
  * 钩子函数
@@ -19,9 +19,13 @@ function config(param) {
         console.log('[jssdk][fail] invoke Vue.use(jssdk, options) first');
         return;
     }
+    if (!_options || !_options.store) {
+        console.log('[jssdk][fail] lost options.store');
+        return;
+    }
     var store = _options.store;
     var commit = store.commit;
-    if (!wx) {
+    if (typeof wx === 'undefined') {
         var callbacks = store.state.jssdk.jssdkErrorCallbacks;
         commit('setJSSDKError', true);
         commit('setJSSDKErrorRes', {
@@ -31,6 +35,7 @@ function config(param) {
             cb && cb(res);
         });
         commit('cleanJSSDKErrorCallbacks');
+        return;
     }
     // 配置正确存在
     if (store.state.jssdk.jssdkConfig) {
