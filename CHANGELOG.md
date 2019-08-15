@@ -7,3 +7,11 @@
 #### 0.1.0
 
 1. 使用rollup构建，发布cjs和esm两个版本内容
+
+#### 0.1.3
+
+1. 添加typescript所使用的类型信息
+
+#### 0.1.4
+
+1. jssdk.config的params添加debug参数

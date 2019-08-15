@@ -145,7 +145,7 @@ function config(param) {
         return;
     }
     wx.config({
-        debug: false,
+        debug: param.debug || false,
         appId: param.appId, // 必填，公众号的唯一标识
         timestamp: param.timestamp, // 必填，生成签名的时间戳
         nonceStr: param.nonceStr, // 必填，生成签名的随机串

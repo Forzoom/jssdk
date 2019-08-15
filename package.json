@@ -1,6 +1,6 @@
 {
   "name": "@forzoom/jssdk",
-  "version": "0.1.1",
+  "version": "0.1.4",
   "description": "",
   "main": "dist/jssdk.cjs.js",
   "module": "dist/jssdk.esm.js",
@@ -12,6 +12,10 @@
     "type": "git",
     "url": "git+ssh://git@github.com/Forzoom/jssdk.git"
   },
+  "files": [
+    "dist/*.js",
+    "types/*.d.ts"
+  ],
   "author": "Forzoom",
   "license": "MIT",
   "bugs": {
@@ -34,5 +38,6 @@
     "rollup": "^0.56.5",
     "sinon": "^6.1.4",
     "sinon-chai": "^3.2.0"
-  }
+  },
+  "types": "types/index.d.ts"
 }

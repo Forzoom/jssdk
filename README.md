@@ -11,3 +11,13 @@ jssdk.config({
 	...params,
 })
 ```
+
+### Type
+
+```javascript
+import { JSSDKState, } from '@forzoom/jssdk';
+
+interface RootState {
+	jssdk: JSSDKState;
+}
+```
