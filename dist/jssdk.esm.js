@@ -139,9 +139,9 @@ function config(param) {
         return;
     }
     // 配置正确存在
-    if (store.state.jssdk.jssdkConfig) {
-        return;
-    }
+    // if (store.state.jssdk.jssdkConfig) {
+    //     return;
+    // }
     wx.config({
         debug: param.debug || false,
         appId: param.appId, // 必填，公众号的唯一标识
