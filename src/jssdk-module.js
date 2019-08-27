@@ -23,7 +23,7 @@ export default {
          *
          * @param {boolean} cache
          */
-        cacheJSSDKParams: function(state, cache) {
+        cacheJSSDKParams(state, cache) {
             state._cacheJSSDKParams = cache;
         },
         /**
@@ -31,7 +31,7 @@ export default {
          *
          * @param {object} params
          */
-        setJSSDKParams: function(state, params) {
+        setJSSDKParams(state, params) {
             state.jssdkParams = params;
         },
         /**
@@ -39,7 +39,7 @@ export default {
          *
          * @param {boolean} config 参数
          */
-        setJSSDKConfig: function(state, config) {
+        setJSSDKConfig(state, config) {
             state.jssdkConfig = config;
         },
         /**
@@ -47,7 +47,7 @@ export default {
          *
          * @param {boolean} ready
          */
-        setJSSDKReady: function(state, ready) {
+        setJSSDKReady(state, ready) {
             state.jssdkReady = ready;
         },
         /**
@@ -55,7 +55,7 @@ export default {
          *
          * @param {} cb 回调函数
          */
-        addJSSDKReadyCallback: function(state, cb) {
+        addJSSDKReadyCallback(state, cb) {
             if (state.jssdkReady) {
                 cb();
             } else {
@@ -65,7 +65,7 @@ export default {
         /**
          * 清空ready的callbacks
          */
-        cleanJSSDKReadyCallbacks: function(state) {
+        cleanJSSDKReadyCallbacks(state) {
             state.jssdkReadyCallbacks = [];
         },
         /**
@@ -73,13 +73,13 @@ export default {
          *
          * @param {} error
          */
-        setJSSDKError: function(state, error) {
+        setJSSDKError(state, error) {
             state.jssdkError = error;
         },
         /**
          * 设置错误信息的res
          */
-        setJSSDKErrorRes: function(state, res) {
+        setJSSDKErrorRes(state, res) {
             state.jssdkErrorRes = res;
         },
         /**
@@ -87,7 +87,7 @@ export default {
          *
          * @param {} cb 回调函数
          */
-        addJSSDKErrorCallback: function(state, cb) {
+        addJSSDKErrorCallback(state, cb) {
             if (state.jssdkError) {
                 cb(state.jssdkErrorRes);
             } else {
@@ -97,7 +97,7 @@ export default {
         /**
          * 清空error的callbacks
          */
-        cleanJSSDKErrorCallbacks: function(state) {
+        cleanJSSDKErrorCallbacks(state) {
             state.jssdkErrorCallbacks = [];
         },
     },

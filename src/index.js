@@ -1,15 +1,15 @@
 import jssdkModule from './jssdk-module.js';
 
-var jssdk = {
+const jssdk = {
     install: install,
     config: config,
     error: error,
     ready: ready,
 };
 // 默认的options
-var _options = null;
+const _options = null;
 // Vue对象
-var _Vue = null;
+const _Vue = null;
 
 /**
  * 钩子函数
@@ -23,10 +23,10 @@ function config(param) {
         console.log('[jssdk][fail] lost options.store');
         return;
     }
-    var store = _options.store;
-    var commit = store.commit;
+    const store = _options.store;
+    const commit = store.commit;
     if (typeof wx === 'undefined') {
-        var callbacks = store.state.jssdk.jssdkErrorCallbacks;
+        const callbacks = store.state.jssdk.jssdkErrorCallbacks;
         commit('setJSSDKError', true);
         commit('setJSSDKErrorRes', {
             errMsg: '缺少wx',
@@ -50,7 +50,7 @@ function config(param) {
         jsApiList: param.jsApiList,
     });
     wx.ready(function() {
-        var callbacks = store.state.jssdk.jssdkReadyCallbacks;
+        const callbacks = store.state.jssdk.jssdkReadyCallbacks;
         commit('setJSSDKReady', true);
         callbacks.forEach(function(cb) {
             cb && cb();
@@ -58,7 +58,7 @@ function config(param) {
         commit('cleanJSSDKReadyCallbacks');
     });
     wx.error(function(res) {
-        var callbacks = store.state.jssdk.jssdkErrorCallbacks;
+        const callbacks = store.state.jssdk.jssdkErrorCallbacks;
         commit('setJSSDKError', true);
         commit('setJSSDKErrorRes', res);
         callbacks.forEach(function(cb) {

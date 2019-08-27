@@ -1,3 +1,7 @@
+const babel = require('rollup-plugin-babel');
+
+const extensions = [ '.ts', '.js', ];
+
 module.exports = exports = [
     {
         input: './src/index.js',
@@ -5,6 +9,12 @@ module.exports = exports = [
             file: './dist/jssdk.esm.js',
             format: 'es',
         },
+        plugins: [
+            babel({
+                extensions: extensions,
+                exclude: 'node_modules/**',
+            }),
+        ],
     },
     {
         input: './src/index.js',
@@ -12,6 +22,11 @@ module.exports = exports = [
             file: './dist/jssdk.cjs.js',
             format: 'cjs',
         },
+        plugins: [
+            babel({
+                extensions: extensions,
+            }),
+        ],
     },
     {
         input: './src/index.js',
@@ -20,5 +35,10 @@ module.exports = exports = [
             format: 'umd',
             name: 'jssdk',
         },
+        plugins: [
+            babel({
+                extensions: extensions,
+            }),
+        ],
     },
 ];

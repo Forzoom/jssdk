@@ -15,3 +15,7 @@
 #### 0.1.4
 
 1. jssdk.config的params添加debug参数
+
+#### 0.1.5
+
+1. 添加babel用于编译
