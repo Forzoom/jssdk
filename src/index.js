@@ -7,9 +7,9 @@ const jssdk = {
     ready: ready,
 };
 // 默认的options
-const _options = null;
+let _options = null;
 // Vue对象
-const _Vue = null;
+let _Vue = null;
 
 /**
  * 钩子函数

@@ -1,7 +1,3 @@
-function _readOnlyError(name) {
-  throw new Error("\"" + name + "\" is read-only");
-}
-
 var jssdkModule = {
   state: {
     // 当前是否已经缓存了jssdkParams
@@ -124,8 +120,6 @@ var jssdk = {
 }; // 默认的options
 
 var _options = null; // Vue对象
-
-var _Vue = null;
 /**
  * 钩子函数
  */
@@ -220,9 +214,7 @@ function install(Vue, options) {
     console.log('[jssdk][fail] options.store.state.jssdk already exist');
     return;
   }
-
-  _Vue = (_readOnlyError("_Vue"), Vue);
-  _options = (_readOnlyError("_options"), options); // 注册module
+  _options = options; // 注册module
 
   options.store.registerModule('jssdk', jssdkModule);
 }

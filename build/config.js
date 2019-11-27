@@ -25,6 +25,7 @@ module.exports = exports = [
         plugins: [
             babel({
                 extensions: extensions,
+                exclude: 'node_modules/**',
             }),
         ],
     },
@@ -38,6 +39,7 @@ module.exports = exports = [
         plugins: [
             babel({
                 extensions: extensions,
+                exclude: 'node_modules/**',
             }),
         ],
     },
