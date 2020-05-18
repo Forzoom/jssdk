@@ -42,6 +42,7 @@ function config(param) {
     //     return;
     // }
     wx.config({
+        beta: param.beta || false,
         debug: param.debug || false,
         appId: param.appId, // 必填，公众号的唯一标识
         timestamp: param.timestamp, // 必填，生成签名的时间戳

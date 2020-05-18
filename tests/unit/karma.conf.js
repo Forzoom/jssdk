@@ -1,13 +1,11 @@
 module.exports = function (config) {
     config.set({
         browsers: [
-            'PhantomJS',
             'Chrome',
         ],
         frameworks: [
             'jasmine',
             'sinon-chai',
-            'phantomjs-shim',
         ],
         reporters: [
             'spec',
@@ -20,9 +18,7 @@ module.exports = function (config) {
         plugins: [
             'karma-jasmine',
             'karma-sinon-chai',
-            'karma-phantomjs-shim',
             'karma-spec-reporter',
-            'karma-phantomjs-launcher',
             'karma-chrome-launcher',
         ],
     });

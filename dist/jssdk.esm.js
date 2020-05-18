@@ -156,6 +156,7 @@ function config(param) {
 
 
   wx.config({
+    beta: param.beta || false,
     debug: param.debug || false,
     appId: param.appId,
     // 必填，公众号的唯一标识
